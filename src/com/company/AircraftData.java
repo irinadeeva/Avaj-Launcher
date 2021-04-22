@@ -1,3 +1,5 @@
+package com.company;
+
 public class AircraftData {
     String type;
     String name;
