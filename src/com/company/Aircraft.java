@@ -11,5 +11,5 @@ public abstract class Aircraft {
         this.coordinates = coordinates;
     }
 
-    private long nextId();
+    //private long nextId();
 }
