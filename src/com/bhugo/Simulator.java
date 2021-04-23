@@ -1,4 +1,7 @@
-package com.company;
+package com.bhugo;
+
+import com.bhugo.aircrаft.AircraftFactory;
+import com.bhugo.aircrаft.Flyable;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

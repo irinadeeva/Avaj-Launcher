@@ -1,4 +1,4 @@
-package com.company;
+package com.bhugo;
 
 public class Coordinates {
     private int longitude;
@@ -6,7 +6,7 @@ public class Coordinates {
     private int height;
 
 
-    Coordinates(int longitude, int latitude, int height){
+    public Coordinates(int longitude, int latitude, int height){
         this.longitude = longitude;
         this.latitude = latitude;
         this.height = height;

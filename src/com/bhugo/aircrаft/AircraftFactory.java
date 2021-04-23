@@ -1,4 +1,7 @@
-package com.company;
+package com.bhugo.aircrаft;
+
+import com.bhugo.Coordinates;
+import com.bhugo.WrongAircraftData;
 
 public class AircraftFactory {
 

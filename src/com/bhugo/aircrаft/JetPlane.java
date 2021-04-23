@@ -1,9 +1,12 @@
-package com.company;
+package com.bhugo.aircrаft;
 
-public class Baloon extends Aircraft implements Flyable{
+import com.bhugo.Coordinates;
+import com.bhugo.WeatherTower;
+
+public class JetPlane extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
 
-    Baloon (String name, Coordinates coordinates){
+    JetPlane (String name, Coordinates coordinates){
         super(name, coordinates);
     }
 
@@ -14,6 +17,6 @@ public class Baloon extends Aircraft implements Flyable{
 
     @Override
     public void registerTower(WeatherTower WeatherTower) {
-
     }
 }
+

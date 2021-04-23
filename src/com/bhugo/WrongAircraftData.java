@@ -1,4 +1,4 @@
-package com.company;
+package com.bhugo;
 
 public class WrongAircraftData extends Exception{
 
