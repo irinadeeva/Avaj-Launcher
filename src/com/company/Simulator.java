@@ -3,9 +3,12 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Simulator {
-    public static Scenario scenario = new Scenario();
+    static int timesToSimulationRun;
+    static List<Flyable> aircraftDataList = new ArrayList<>();
 
     public static void main(String[] args) {
         if (args.length == 1 && args[0].endsWith(".txt") && readFile(args[0])) {
@@ -25,8 +28,8 @@ public class Simulator {
         {
             String sCurrentLine;
             if ((sCurrentLine = br.readLine()) != null) {
-                scenario.timesToSimulationRun = Integer.parseInt(sCurrentLine);
-                if (scenario.timesToSimulationRun <= 0) {
+                timesToSimulationRun = Integer.parseInt(sCurrentLine);
+                if (timesToSimulationRun <= 0) {
                     System.out.println("The number of times the simulation is due to run has to be positive.");
                     return (false);
                 }
@@ -37,11 +40,17 @@ public class Simulator {
                     System.out.println("Describes an aircraft with the format: TYPE NAME LONGITUDE LATITUDE HEIGHT.");
                     return (false);
                 }
-               // scenario.aircraftDataList.add(new);
+                aircraftDataList.add(AircraftFactory.newAircraft(splited[0],splited[1],
+                        Integer.parseInt(splited[2]),Integer.parseInt(splited[3]),Integer.parseInt(splited[4])));
                 System.out.println(sCurrentLine);
             }
-        } catch (IOException | NumberFormatException e) {
+            if (aircraftDataList.size() == 0) {
+                System.out.println("There is no aircraft for simulation.");
+                return (false);
+            }
+        } catch (IOException | NumberFormatException | WrongAircraftData e) {
             System.out.println(e.getMessage());
+            return(false);
         }
         return (true);
     }

@@ -1,9 +1,9 @@
-//package com.company;
-//
-//public interface Flyable {
-//
-//    public void updateConditions();
-//
-//    public void registerTower(WeatherTower WeatherTower);
-//
-//}
+package com.company;
+
+public interface Flyable {
+
+    void updateConditions();
+
+    void registerTower(WeatherTower WeatherTower);
+
+}
