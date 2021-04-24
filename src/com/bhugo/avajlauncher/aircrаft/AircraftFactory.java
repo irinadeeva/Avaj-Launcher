@@ -1,6 +1,5 @@
 package com.bhugo.avajlauncher.aircrаft;
 
-import com.bhugo.avajlauncher.Coordinates;
 import com.bhugo.avajlauncher.WrongAircraftData;
 
 public class AircraftFactory {

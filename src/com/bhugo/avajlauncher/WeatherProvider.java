@@ -1,8 +1,10 @@
 package com.bhugo.avajlauncher;
 
+import com.bhugo.avajlauncher.aircrаft.Coordinates;
+
 public class WeatherProvider {
-    private static WeatherProvider weatherProvider;
-    private static String[] weather;
+    private static WeatherProvider weatherProvider = new WeatherProvider();
+    private static String[] weather = {"RAIN", "SUN", "SNOW", "FOG"};
 
     private WeatherProvider(){
     }
@@ -11,7 +13,8 @@ public class WeatherProvider {
         return weatherProvider;
     }
 
-    public String getCurrentWeather(Coordinates coordinates){
-    }
+   public String getCurrentWeather(Coordinates coordinates){
+        return weather[(coordinates.getLongitude() + coordinates.getLatitude() + coordinates.getHeight()) % 4];
+   }
 }
 
