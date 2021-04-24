@@ -1,7 +1,7 @@
-package com.bhugo;
+package com.bhugo.avajlauncher;
 
-import com.bhugo.aircrаft.AircraftFactory;
-import com.bhugo.aircrаft.Flyable;
+import com.bhugo.avajlauncher.aircrаft.AircraftFactory;
+import com.bhugo.avajlauncher.aircrаft.Flyable;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,10 +12,16 @@ import java.util.List;
 public class Simulator {
     static int timesToSimulationRun;
     static List<Flyable> aircraftDataList = new ArrayList<>();
+    static WeatherTower weatherTower;
 
     public static void main(String[] args) {
         if (args.length == 1 && args[0].endsWith(".txt") && readFile(args[0])) {
-            System.out.println("all right");
+            for (Flyable a : aircraftDataList){
+                a.registerTower(weatherTower);
+            }
+
+
+
         } else if (args.length == 0) {
             System.out.println("The program expects a text file that will contain the scenario to be simulated.");
         } else if (args.length == 1 && !args[0].endsWith(".txt")) {
@@ -25,7 +31,7 @@ public class Simulator {
         }
     }
 
-    public static boolean readFile(String fileName)
+    private static boolean readFile(String fileName)
     {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName)))
         {
@@ -45,8 +51,8 @@ public class Simulator {
                 }
                 aircraftDataList.add(AircraftFactory.newAircraft(splited[0],splited[1],
                         Integer.parseInt(splited[2]),Integer.parseInt(splited[3]),Integer.parseInt(splited[4])));
-                System.out.println(sCurrentLine);
             }
+            br.close();
             if (aircraftDataList.size() == 0) {
                 System.out.println("There is no aircraft for simulation.");
                 return (false);

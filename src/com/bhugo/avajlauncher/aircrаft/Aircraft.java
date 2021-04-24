@@ -1,6 +1,6 @@
-package com.bhugo.aircrаft;
+package com.bhugo.avajlauncher.aircrаft;
 
-import com.bhugo.Coordinates;
+import com.bhugo.avajlauncher.Coordinates;
 
 public abstract class Aircraft {
     protected long id;

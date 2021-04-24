@@ -1,4 +1,4 @@
-package com.bhugo;
+package com.bhugo.avajlauncher;
 
 public class Coordinates {
     private int longitude;
