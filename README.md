@@ -16,7 +16,7 @@ This project is intended to teach a student:
 - error management
 
 The program takes one and only one argument from the command line. This argument represents the name of a text file that will contain the scenario needs to be simulated. The program execution generates a file
-[scenario.txt](https://github.com/irinadeeva/Avaj-Launcher/blob/master/scenario.txt)
+[scenario.txt](https://github.com/irinadeeva/Avaj-Launcher/blob/master/src/scenario.txt)
 that describes the outcome of the simulation.
 
 Scenario file
@@ -29,7 +29,7 @@ Each run, the Weather Tower provides updated weather conditions for every aircra
 
 ## Usage
 
-Compile and run the program with the script **compileProject.sh**. A program takes a path to a scenario file as a single parameter. By default, it looks for *scenario.txt* in the *src* dir. 
+Compile and run the program with the script **[compileProject.sh](https://github.com/irinadeeva/Avaj-Launcher/blob/master/src/compileProject.sh)**. A program takes a path to a scenario file as a single parameter. By default, it looks for *scenario.txt* in the *src* dir. 
 
 ```
 SCENARIO INPUT FILE FORMAT:
@@ -57,10 +57,31 @@ JetPlane J2 11 99 768
 Helicopter H4 223 23 54
 ```
 
-From this input, the program generated this simulation log file: [simulation.txt](https://github.com/dstepanets/Avaj-Launcher/blob/master/src/simulation.txt).
+From this input, the program generated this simulation log file: [simulation.txt](https://github.com/irinadeeva/Avaj-Launcher/blob/master/src/simulation.txt).
 
 For example:
 
 ```
+Tower says: Baloon#B22(1) registered to weather tower.
+Tower says: JetPlane#J1(2) registered to weather tower.
+Tower says: Helicopter#H1(3) registered to weather tower.
+Tower says: Helicopter#H2(4) registered to weather tower.
+Tower says: Helicopter#H3(5) registered to weather tower.
+Tower says: Baloon#B3(6) registered to weather tower.
+Tower says: JetPlane#J2(7) registered to weather tower.
+Tower says: Helicopter#H4(8) registered to weather tower.
+Baloon#B22(1): We'll likely to hit fog soon.
+JetPlane#J1(2): The only thing we want for Christmas is snow...
+JetPlane#J1(2) landing.
+Tower says: JetPlane#J1(2) unregistered to weather tower with coordinates (23,44, 0).
+Helicopter#H2(4): All I could see is fog.
+Helicopter#H3(5): All I could see is fog.
+Baloon#B3(6): We'll likely to hit fog soon.
+Baloon#B3(6) landing.
+Tower says: Baloon#B3(6) unregistered to weather tower with coordinates (102,22, 0).
+Helicopter#H4(8): All I could see is fog.
+Baloon#B22(1): I'm afraid we shall have rain before morning.
+Baloon#B22(1) landing.
+...
 ```
 
